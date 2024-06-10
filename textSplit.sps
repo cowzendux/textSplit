@@ -21,7 +21,7 @@
 *******
 * 2014-02-17 Created
 
-begin program python.
+BEGIN PROGRAM PYTHON3.
 import spss
 def textSplit(textVar, delimiter = None, outVarName = None):
     if (outVarName == None):
@@ -34,7 +34,7 @@ def textSplit(textVar, delimiter = None, outVarName = None):
         if spss.GetVariableName(i)==textVar:
             textVarNum = i
     if textVarNum == -1:
-        print "textVar not in data set"
+        print("textVar not in data set")
         exit(-1)
 
 # Extract parts
@@ -72,8 +72,8 @@ def textSplit(textVar, delimiter = None, outVarName = None):
     for t in newNames:
         for i in oldVar:
             if (t == i):
-                print "Variable name {0} already in data set".format(t)
-                print "Stopping execution"
+                print("Variable name {0} already in data set".format(t))
+                print("Stopping execution")
                 exit(-1)
 
     dataCursor=spss.Cursor([textVarNum], accessType='w')
